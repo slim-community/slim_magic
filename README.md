@@ -17,22 +17,38 @@ full of summaries output by the code or
 a tree sequence. 
 
 ## Installation
-To install `slim_magic` take the following steps, starting with
-cloning this repo
+
+`slim_magic` is an ipython extension that shells out to the `slim`
+binary. SLiM itself is **not** installed by pip — install it
+separately from https://messerlab.org/slim/ (SLiM 5 or newer is
+required for the current examples) and make sure `slim` is on your
+`$PATH`.
+
+Clone the repo:
 
 ```
-$ git clone git@github.com:andrewkern/slim_magic.git
+$ git clone https://github.com/andrewkern/slim_magic.git
 $ cd slim_magic
 ```
-(optional) create a new conda environment or similar
+
+(optional) create a fresh environment with Python 3.10 or newer:
+
 ```
-$ conda create -n slim_magic python=3.8 --yes
+$ conda create -n slim_magic python=3.11 --yes
 $ conda activate slim_magic
 ```
-that will take a minute. now install the
-`slim_magic` ipython extension
+
+Install the extension with pip:
+
 ```
-$ python setup.py install
+$ pip install .
+```
+
+To also pull in the optional dependencies used by the example
+notebook (`jupyter`, `msprime`, `matplotlib`):
+
+```
+$ pip install '.[notebook]'
 ```
 ## usage
 Currently there are four separate magic functions implemented, please
